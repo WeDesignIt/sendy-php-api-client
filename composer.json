@@ -1,0 +1,35 @@
+{
+  "name": "wedesignit/sendy-php-api-client",
+  "description": "PHP Client for the Sendy API",
+  "type": "library",
+  "keywords": [
+    "Sendy",
+    "Sendy API client",
+    "KeenDelivery",
+    "KeenDelivery API client",
+    "WeDesignIt"
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^7",
+    "php": "^8.0",
+    "ext-json": "*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Patrick van Kouteren",
+      "email": "p.vankouteren@wedesignit.nl",
+      "homepage": "https://www.wedesignit.nl"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WeDesignIt\\Sendy\\": "src/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
