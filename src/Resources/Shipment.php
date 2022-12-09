@@ -252,11 +252,11 @@ class Shipment extends Resource
     /**
      * The shipment’s total weight in kilograms.
      *
-     * @param int $weight
+     * @param float $weight
      *
      * @return self
      */
-    public function weight(int $weight): self
+    public function weight(float $weight): self
     {
         $this->offsetSet(self::WEIGHT, $weight);
 

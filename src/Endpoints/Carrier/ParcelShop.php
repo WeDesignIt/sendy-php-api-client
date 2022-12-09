@@ -18,9 +18,11 @@ class ParcelShop extends Endpoint
      *
      * @return array|string
      */
-    public function list(): array|string
+    public function list(array $filters = []): array|string
     {
-        return $this->client->request('get', 'parcel-shops');
+        return $this->client->request('get', 'parcel_shops', [
+            'query' => $filters,
+        ]);
     }
 
 }
