@@ -44,7 +44,7 @@ class Sendy
     /**
      * @return Service
      */
-    public function Service(): Service
+    public function service(): Service
     {
         return new Service($this->client);
     }
