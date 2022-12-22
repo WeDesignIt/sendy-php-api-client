@@ -39,8 +39,9 @@ class Client
         $this->client = new GuzzleClient([
             'base_uri' => $this->baseUrl,
             'headers' => [
-                'Authorization' => 'bearer ' . $this->token,
+                'Authorization' => 'Bearer ' . $this->token,
                 'Accept' => 'application/json',
+                'User-Agent' => 'sendy-php-api-client/1.0 (github.com/wedesignit/sendy-php-api-client)',
             ],
         ]);
     }
