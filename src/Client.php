@@ -11,9 +11,9 @@ class Client
     /**
      * @var string
      */
-    protected string $baseUrl = 'https://portal.keendelivery.com/api/v3/';
+    //protected string $baseUrl = 'https://portal.keendelivery.com/api/v3/';
     // will become:
-    //protected string $baseUrl = 'https://app.sendy.nl/api/';
+    protected string $baseUrl = 'https://app.sendy.nl/api/';
 
     /**
      * @var GuzzleClient
