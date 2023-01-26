@@ -107,4 +107,9 @@ class Shipment extends Endpoint
             ],
         ]);
     }
+
+    public function labels(string $uuid): array|string
+    {
+        return $this->client->request('get', 'shipments/' . $uuid . '/documents');
+    }
 }
