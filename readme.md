@@ -2,7 +2,7 @@
 
 Formerly known as KeenDelivery.
 
-Implementation according to the [docs](https://portal.keendelivery.com/api/v3/docs).
+Implementation according to the [docs](https://app.sendy.nl/api/docs).
 
 ## Installing
 
