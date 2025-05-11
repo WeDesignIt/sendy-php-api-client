@@ -36,12 +36,16 @@ class Resource implements \ArrayAccess, Arrayable, HasRequiredFields
     }
 
     /**
+     * @param array $requiredFields For custom required fields
      * @return bool
      */
-    public function containsAllRequiredFields(): bool
+    public function containsAllRequiredFields(array $requiredFields = []): bool
     {
-        foreach ($this->getRequiredFields() as $requiredField) {
-            if (! array_key_exists($requiredField, $this->data)) {
+        if (empty($requiredFields)) {
+            $requiredFields = $this->getRequiredFields();
+        }
+        foreach ($requiredFields as $requiredField) {
+            if (!array_key_exists($requiredField, $this->data)) {
                 return false;
             }
         }
