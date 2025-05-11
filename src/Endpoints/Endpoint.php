@@ -19,4 +19,14 @@ abstract class Endpoint
         $this->client = $client;
     }
 
+    public function containsRequiredKeys(array $required, array $data): bool
+    {
+        return empty($this->getMissingRequiredKeys($required, $data));
+    }
+
+    public function getMissingRequiredKeys(array $required, array $data): array
+    {
+        return array_keys(array_diff_key(array_flip($required), $data));
+    }
+
 }
