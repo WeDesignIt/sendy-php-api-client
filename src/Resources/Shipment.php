@@ -10,6 +10,7 @@ class Shipment extends Resource
     public const CARRIER = 'carrier';
     public const SERVICE = 'service';
     public const SHOP_ID = 'shop_id';
+    public const PREFERENCE_ID = 'preference_id';
     public const COMPANY_NAME = 'company_name';
     public const CONTACT = 'contact';
     public const VAT_NUMBER = 'vat_number';
@@ -34,8 +35,7 @@ class Shipment extends Resource
     public function getRequiredFields(): array
     {
         return [
-            self::CARRIER, self::SERVICE, self::SHOP_ID, self::STREET, self::CITY, self::COUNTRY, self::REFERENCE,
-            self::WEIGHT, self::AMOUNT,
+            self::SHOP_ID, self::COUNTRY,
         ];
     }
 
@@ -79,6 +79,18 @@ class Shipment extends Resource
     public function shopId(string $shopId): self
     {
         $this->offsetSet(self::SHOP_ID, $shopId);
+
+        return $this;
+    }
+
+    /**
+     * @param string $preferenceId (UUID)
+     *
+     * @return self
+     */
+    public function preferenceId(string $preferenceId): self
+    {
+        $this->offsetSet(self::PREFERENCE_ID, $preferenceId);
 
         return $this;
     }

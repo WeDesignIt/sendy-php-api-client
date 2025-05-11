@@ -2,6 +2,8 @@
 
 namespace WeDesignIt\Sendy\Endpoints\Carrier;
 
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\RequestOptions;
 use WeDesignIt\Sendy\Endpoints\Endpoint;
 
 /**
@@ -15,23 +17,28 @@ class Carrier extends Endpoint
     /**
      * List all carriers.
      *
-     * @see https://portal.keendelivery.com/api/v3/docs#tag/Carriers/operation/getCarriers
+     * @see https://app.sendy.nl/api/docs#tag/Carriers/operation/getCarriers
      *
+     * @param array $query Possible keys for Sendy: 'product_type', 'delivery_type', 'country'
      * @return array|string
+     * @throws GuzzleException
      */
-    public function list(): array|string
+    public function list(array $query = []): array|string
     {
-        return $this->client->request('get', 'carriers');
+        return $this->client->request('get', 'carriers', [
+            RequestOptions::QUERY => $query,
+        ]);
     }
 
     /**
      * Get a carrier by ID.
      *
-     * @see https://portal.keendelivery.com/api/v3/docs#tag/Carriers/operation/getCarrier
+     * @see https://app.sendy.nl/api/docs#tag/Carriers/operation/getCarrier
      *
      * @param int $id
      *
      * @return array|string
+     * @throws GuzzleException
      */
     public function get(int $id): array|string
     {
